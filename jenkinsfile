@@ -42,10 +42,7 @@ def getChangedFiles(){
          def files = new ArrayList(entry.affectedFiles)
          for (int k = 0; k < files.size(); k++) {
             def file = files[k]
-            filePath = "${file.path}"
-            if("${file.editType.name}"!="delete"){
-               changes.add(filePath);
-             }
+            filePath += "${file.path}"
          }
       }
    }

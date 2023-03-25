@@ -29,6 +29,7 @@ pipeline {
     }
 }
 
+}
 def getChangedFiles(){
    def changes = []
    def changeLogSets = currentBuild.changeSets

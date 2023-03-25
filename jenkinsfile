@@ -8,8 +8,8 @@ pipeline {
             steps {
                 echo 'Building main'
                 script{
-                 def changedFiles = [];
-                 changedFiles = getChangedFiles();
+                 def changedFiles = []
+                 changedFiles = getChangedFiles()
                 if(changedFiles.size>0){
                     println(changedFiles)
                  }

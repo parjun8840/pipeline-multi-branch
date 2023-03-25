@@ -18,6 +18,7 @@ pipeline {
                  }
             }
         }
+        }
         stage('Build Dev') {
             when {
                 branch 'dev'
@@ -29,7 +30,7 @@ pipeline {
     }
 }
 
-}
+
 def getChangedFiles(){
    def changes = []
    def changeLogSets = currentBuild.changeSets

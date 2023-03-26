@@ -7,9 +7,12 @@ pipeline {
             }
             steps {
                 echo 'Building main'
-                script{
+                script {
                 foo()
-        }
+
+                }
+
+            }
         }
         stage('Build Dev') {
             when {
@@ -22,11 +25,9 @@ pipeline {
     }
 }
 
-}
 def foo(){
   list friends = ['A', 'B', 'C', 'D']
   for(item in friends) {
     println item
 }
 }
-

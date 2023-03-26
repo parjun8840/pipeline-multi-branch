@@ -22,7 +22,7 @@ pipeline {
     }
 }
 
-
+}
 def foo(){
   list friends = ['A', 'B', 'C', 'D']
   for(item in friends) {

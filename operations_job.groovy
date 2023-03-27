@@ -23,6 +23,11 @@ folder('operations/devops/k8s') {
   description('devops K8s related Jobs')
 }
 
+folder('operations/common') {
+  displayName('common')
+  description('operations common Jobs for Sre and DevOps')
+}
+
 folder('operations/common/prod') {
   displayName('common-prod')
   description('operations common prod related Job')

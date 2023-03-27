@@ -78,6 +78,7 @@ definition {
                                            }
                                          }
                                     }
+                                 }
 
                                     def foo(){
                                       list friends = ['A', 'B', 'C', 'D']

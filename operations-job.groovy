@@ -52,9 +52,6 @@ definition {
                                            }
                                       steps {
                                        echo 'Hello World'
-                                       script{
-                                        foo()
-                                         }
                                        echo "VAR_BOOLEAN $params.VAR_BOOLEAN"
                                        echo "VAR_STRING $params.VAR_STRING"
                                        echo "VAR_TEXT $params.VAR_TEXT"
@@ -65,12 +62,6 @@ definition {
                                          }
                                     }
 
-                                    def foo(){
-                                      list friends = ['A', 'B', 'C', 'D']
-                                      for(item in friends) {
-                                         println item
-                                                           }
-                                            }
                     ''')
                     
                 }

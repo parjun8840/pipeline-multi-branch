@@ -44,12 +44,6 @@ definition {
                                      }
                              stages {
                                  stage('Build') {
-                                     when {
-                                        anyOf{
-                                            environment name:  'DEPOLY_TO', value: 'production'
-                                           environment name: 'some_name', value: 'parjun8840'
-                                             }
-                                           }
                                       steps {
                                        echo 'Hello World'
                                        script{
@@ -64,6 +58,7 @@ definition {
                                            }
                                          }
                                     }
+                                    }
 
                                     def foo(){
                                       list friends = ['A', 'B', 'C', 'D']
@@ -74,6 +69,5 @@ definition {
                     ''')
                     
                 }
-            }
             }
             }

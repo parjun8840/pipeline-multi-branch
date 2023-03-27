@@ -3,11 +3,20 @@ folder('operations') {
   description('Operations related all Jobs')
 }
 
+folder('operations/sre') {
+  displayName('operations-sre')
+  description('Operations related all Jobs for sre')
+}
+
 folder('operations/sre/monitoring') {
   displayName('sre-monitoring')
   description('sre monitoring related Jobs')
 }
 
+folder('operations/devops') {
+  displayName('operations-devops')
+  description('devops K8s related Jobs for devops')
+}
 
 folder('operations/devops/k8s') {
   displayName('devops-k8s')
@@ -44,6 +53,12 @@ definition {
                                      }
                              stages {
                                  stage('Build') {
+                                     when {
+                                        anyOf{
+                                            environment name:  'DEPOLY_TO', value: 'production'
+                                           environment name: 'some_name', value: 'parjun8840'
+                                             }
+                                           }
                                       steps {
                                        echo 'Hello World'
                                        script{
@@ -58,7 +73,6 @@ definition {
                                            }
                                          }
                                     }
-                                    }
 
                                     def foo(){
                                       list friends = ['A', 'B', 'C', 'D']
@@ -69,5 +83,6 @@ definition {
                     ''')
                     
                 }
+            }
             }
             }

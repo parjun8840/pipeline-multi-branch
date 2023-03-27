@@ -31,9 +31,9 @@ definition {
                 cps {
                     script('''
                          pipeline {
-                             agent any
+                             agent {label 'DONT-USE-THIS'}
                              libraries {
-                                 lib("pipeline-lib@master")
+                                 lib("jenkins-series-library")
                              }
                           parameters {
                               booleanParam(name: "VAR_BOOLEAN", defaultValue: true, description: "Sample boolean parameter")
@@ -52,6 +52,9 @@ definition {
                                            }
                                       steps {
                                        echo 'Hello World'
+                                       script{
+                                        foo()
+                                         }
                                        echo "VAR_BOOLEAN $params.VAR_BOOLEAN"
                                        echo "VAR_STRING $params.VAR_STRING"
                                        echo "VAR_TEXT $params.VAR_TEXT"
@@ -62,6 +65,12 @@ definition {
                                          }
                                     }
 
+                                    def foo(){
+                                      list friends = ['A', 'B', 'C', 'D']
+                                      for(item in friends) {
+                                         println item
+                                                           }
+                                            }
                     ''')
                     
                 }

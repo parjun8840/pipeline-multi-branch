@@ -61,7 +61,7 @@ definition {
                                      when {
                                         anyOf{
                                             environment name:  'DEPOLY_TO', value: 'production'
-                                           environment name: 'some_name', value: 'parjun8840'
+                                            branch 'main'
                                              }
                                            }
                                       steps {

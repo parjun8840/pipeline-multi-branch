@@ -58,9 +58,7 @@ definition {
                                      }
                              stages {
                                  stage('Build') {
-                                     when {
-                                            branch 'main'
-                                           }
+                                     when {expression { return params.VAR_BOOLEAN } }
                                       steps {
                                        echo 'Hello World'
                                        script{

@@ -91,7 +91,12 @@ pipelineJob("operations/common/dev/basic-scm-setup") {
     definition {
         cpsScm {
             scm {
-                git('https://github.com/parjun8840/pipeline-multi-branch.git')
+                git{
+                  remote {
+                    url('https://github.com/parjun8840/pipeline-multi-branch.git')
+                         }
+                  branch("main")
+                     }
             }
             scriptPath("pipelines/basic-scm-setup.groovy")
             lightweight(true)

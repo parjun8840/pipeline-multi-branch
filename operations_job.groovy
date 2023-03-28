@@ -87,7 +87,7 @@ definition {
                 }
             }
 
-pipelineJob('"operations/common/dev/basic-scm-setup"') {
+pipelineJob("operations/common/dev/basic-scm-setup") {
     definition {
         cpsScm {
             scm {

@@ -59,10 +59,7 @@ definition {
                              stages {
                                  stage('Build') {
                                      when {
-                                        anyOf{
-                                            environment name:  'DEPOLY_TO', value: 'production'
                                             branch 'main'
-                                             }
                                            }
                                       steps {
                                        echo 'Hello World'
